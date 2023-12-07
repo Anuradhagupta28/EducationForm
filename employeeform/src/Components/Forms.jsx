@@ -57,11 +57,11 @@ const DestinationForm =  () => {
   
     if (response.status === 201) {
         // Handle successful response
-        let id= response.data._id;
+        
         toast({
           title: "Form submitted successfully",
           status: "success",
-          description: `ID: ${id}`,
+         
           duration: 3000,
           isClosable: true
         });
@@ -109,7 +109,7 @@ const DestinationForm =  () => {
           <FormLabel>Name</FormLabel>
           <Input
             type="text"
-            id="Name_id"
+           
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
@@ -120,7 +120,7 @@ const DestinationForm =  () => {
           <FormLabel>Email address</FormLabel>
           <Input
             type="email"
-            id="Email_id"
+           
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -131,7 +131,7 @@ const DestinationForm =  () => {
           <FormLabel>Phone Number</FormLabel>
           <Input
             type="number"
-            id="phone_id"
+          
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
             required
@@ -143,7 +143,7 @@ const DestinationForm =  () => {
           <FormLabel fontSize='sm'>Bachelor's course name</FormLabel>
           <Input
             type="text"
-            id="course_id"
+        
             value={course}
             onChange={(e) => setCourse(e.target.value)}
             required
@@ -151,7 +151,7 @@ const DestinationForm =  () => {
           <FormLabel fontSize='sm'>Passout Year of Graduation</FormLabel>
           <Input
             type="text"
-            id="passingYear_id"
+           
             value={passingyear}
             onChange={(e) => setPassingYear(e.target.value)}
             required
