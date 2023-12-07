@@ -18,8 +18,8 @@ const DestinationForm =  () => {
   const [phone, setPhone] = useState(null);
 
   const [course, setCourse] = useState("");
-  const [passingYear, setPassingYear] = useState("");
-  const [additionalDeatils, setAdditionalDetails] = useState("");
+  const [passingyear, setPassingYear] = useState("");
+  const [additionaldetail, setAdditionalDetails] = useState("");
 
   
   const toast = useToast();
@@ -42,19 +42,20 @@ const DestinationForm =  () => {
     const data = {
       name: name,
       email: email,
-      Phone: phone,
+      phone: phone,
       course: course,
-      passingyear: passingYear,
-      additionaldetail: additionalDeatils
+      passingyear: passingyear,
+      additionaldetail: additionaldetail
     };
-    
+    console.log(data);
     try {
       const response = await axios.post(
         "http://localhost:8080/api/data",
         data
       );
+      console.log("response",response);
   
-    if (response.status === 200) {
+    if (response.status === 201) {
         // Handle successful response
         let id= response.data._id;
         toast({
@@ -151,7 +152,7 @@ const DestinationForm =  () => {
           <Input
             type="text"
             id="passingYear_id"
-            value={passingYear}
+            value={passingyear}
             onChange={(e) => setPassingYear(e.target.value)}
             required
           />
@@ -164,7 +165,7 @@ const DestinationForm =  () => {
             <Input
             type="text"
             id="Additional details_id"
-            value={additionalDeatils}
+            value={additionaldetail}
             onChange={(e) => setAdditionalDetails(e.target.value)}
             required
           />
