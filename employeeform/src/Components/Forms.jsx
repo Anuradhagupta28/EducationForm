@@ -61,7 +61,7 @@ const DestinationForm =  () => {
         toast({
           title: "Form submitted successfully",
           status: "success",
-         
+         description:" data is stored in json format",
           duration: 3000,
           isClosable: true
         });
